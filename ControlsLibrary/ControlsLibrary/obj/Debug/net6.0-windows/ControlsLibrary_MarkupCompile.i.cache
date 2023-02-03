@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\romas\source\repos\WPFControls\ControlsLibrary\ControlsLibrary\App.xaml
-11407045341
+51341349783
 
-51626372247
+141878066593
 1942007414746
-MainWindow.xaml;
+Controls\TextControl.xaml;MainWindow.xaml;Resources\DesignerItem.xaml;Resources\ResizeRotateChrome.xaml;Resources\SizeChrome.xaml;
 
 True
 
