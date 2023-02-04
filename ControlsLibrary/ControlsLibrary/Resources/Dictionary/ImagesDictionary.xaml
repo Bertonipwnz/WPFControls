@@ -5,4 +5,7 @@
     
     <!-- Иконка поворота элемента. -->
     <BitmapImage x:Key="IconRotate" UriSource="/Assets/Icons/icon_rotate.png" />
+    
+    <!-- Иконка перемещения элемента. -->
+    <BitmapImage x:Key="IconMove" UriSource="/Assets/Icons/icon_move.png" />
 </ResourceDictionary>

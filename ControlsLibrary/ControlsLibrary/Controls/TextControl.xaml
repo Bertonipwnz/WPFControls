@@ -57,16 +57,17 @@
                     VerticalAlignment="Top"
                     Fill="Green" />
 
-                <Rectangle
+                <!--  Иконка перемещения текстового поля.  -->
+                <Image
                     Width="20"
                     Height="20"
-                    Margin="-5,-5,-5,0"
+                    Margin="0,0,-10,-10"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Bottom"
-                    Fill="Red"
                     MouseLeftButtonDown="TranslateRectangleMouseLeftButtonDown"
                     MouseLeftButtonUp="TranslateRectangleMouseLeftButtonUp"
-                    MouseMove="TranslateRectangleMouseMove" />
+                    MouseMove="TranslateRectangleMouseMove"
+                    Source="{StaticResource IconMove}" />
 
                 <!--  Иконка смены размера текстового поля.  -->
                 <Image

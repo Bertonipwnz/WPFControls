@@ -144,7 +144,7 @@ namespace ControlsLibrary.Controls
         private void TranslateRectangleMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             _isMoving = false;
-            Rectangle rect = (Rectangle)sender;
+            Image rect = (Image)sender;
             rect.ReleaseMouseCapture();
         }
 
@@ -153,7 +153,7 @@ namespace ControlsLibrary.Controls
         /// </summary>
         private void TranslateRectangleMouseMove(object sender, MouseEventArgs e)
         {
-            Rectangle rect = (Rectangle)sender;
+            Image rect = (Image)sender;
             if (_isMoving)
             {
                 // get the parent container
