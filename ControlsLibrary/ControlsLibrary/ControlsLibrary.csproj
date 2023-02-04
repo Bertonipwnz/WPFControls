@@ -8,11 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Icons\icon_rotate.png" />
     <None Remove="Assets\icon_resize.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="Assets\Icons\icon_resize.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Icons\icon_rotate.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

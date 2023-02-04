@@ -28,3 +28,4 @@ C:\Users\romas\source\repos\WPFControls\ControlsLibrary\ControlsLibrary\obj\Debu
 C:\Users\romas\source\repos\WPFControls\ControlsLibrary\ControlsLibrary\bin\Debug\net6.0-windows\Assets\Icons\icon_resize.png
 C:\Users\romas\source\repos\WPFControls\ControlsLibrary\ControlsLibrary\obj\Debug\net6.0-windows\Resources\Dictionary\ImagesDictionary.baml
 C:\Users\romas\source\repos\WPFControls\ControlsLibrary\ControlsLibrary\obj\Debug\net6.0-windows\ControlsLibrary_Content.g.cs
+C:\Users\romas\source\repos\WPFControls\ControlsLibrary\ControlsLibrary\bin\Debug\net6.0-windows\Assets\Icons\icon_rotate.png
