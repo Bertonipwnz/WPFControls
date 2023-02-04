@@ -8,8 +8,6 @@ C:\Users\romas\source\repos\WPFControls\ControlsLibrary\ControlsLibrary\obj\Debu
 C:\Users\romas\source\repos\WPFControls\ControlsLibrary\ControlsLibrary\obj\Debug\net6.0-windows\App.baml
 C:\Users\romas\source\repos\WPFControls\ControlsLibrary\ControlsLibrary\obj\Debug\net6.0-windows\Controls\TextControl.baml
 C:\Users\romas\source\repos\WPFControls\ControlsLibrary\ControlsLibrary\obj\Debug\net6.0-windows\MainWindow.baml
-C:\Users\romas\source\repos\WPFControls\ControlsLibrary\ControlsLibrary\obj\Debug\net6.0-windows\Resources\DesignerItem.baml
-C:\Users\romas\source\repos\WPFControls\ControlsLibrary\ControlsLibrary\obj\Debug\net6.0-windows\Resources\ResizeRotateChrome.baml
 C:\Users\romas\source\repos\WPFControls\ControlsLibrary\ControlsLibrary\obj\Debug\net6.0-windows\ControlsLibrary.dll
 C:\Users\romas\source\repos\WPFControls\ControlsLibrary\ControlsLibrary\obj\Debug\net6.0-windows\refint\ControlsLibrary.dll
 C:\Users\romas\source\repos\WPFControls\ControlsLibrary\ControlsLibrary\obj\Debug\net6.0-windows\ControlsLibrary.pdb
@@ -18,7 +16,6 @@ C:\Users\romas\source\repos\WPFControls\ControlsLibrary\ControlsLibrary\bin\Debu
 C:\Users\romas\source\repos\WPFControls\ControlsLibrary\ControlsLibrary\bin\Debug\net6.0-windows\ControlsLibrary.runtimeconfig.json
 C:\Users\romas\source\repos\WPFControls\ControlsLibrary\ControlsLibrary\bin\Debug\net6.0-windows\ControlsLibrary.dll
 C:\Users\romas\source\repos\WPFControls\ControlsLibrary\ControlsLibrary\bin\Debug\net6.0-windows\ControlsLibrary.pdb
-C:\Users\romas\source\repos\WPFControls\ControlsLibrary\ControlsLibrary\obj\Debug\net6.0-windows\Resources\SizeChrome.baml
 C:\Users\romas\source\repos\WPFControls\ControlsLibrary\ControlsLibrary\obj\Debug\net6.0-windows\ControlsLibrary.g.resources
 C:\Users\romas\source\repos\WPFControls\ControlsLibrary\ControlsLibrary\obj\Debug\net6.0-windows\ControlsLibrary.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\romas\source\repos\WPFControls\ControlsLibrary\ControlsLibrary\obj\Debug\net6.0-windows\ControlsLibrary.AssemblyInfoInputs.cache
@@ -26,3 +23,5 @@ C:\Users\romas\source\repos\WPFControls\ControlsLibrary\ControlsLibrary\obj\Debu
 C:\Users\romas\source\repos\WPFControls\ControlsLibrary\ControlsLibrary\obj\Debug\net6.0-windows\ControlsLibrary.csproj.CoreCompileInputs.cache
 C:\Users\romas\source\repos\WPFControls\ControlsLibrary\ControlsLibrary\obj\Debug\net6.0-windows\ControlsLibrary.genruntimeconfig.cache
 C:\Users\romas\source\repos\WPFControls\ControlsLibrary\ControlsLibrary\obj\Debug\net6.0-windows\ref\ControlsLibrary.dll
+C:\Users\romas\source\repos\WPFControls\ControlsLibrary\ControlsLibrary\bin\Debug\net6.0-windows\CommunityToolkit.Mvvm.dll
+C:\Users\romas\source\repos\WPFControls\ControlsLibrary\ControlsLibrary\obj\Debug\net6.0-windows\ControlsLibrary.csproj.CopyComplete

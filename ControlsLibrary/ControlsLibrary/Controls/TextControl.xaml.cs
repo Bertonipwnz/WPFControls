@@ -1,9 +1,5 @@
-﻿using System;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
+﻿using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Shapes;
 
 namespace ControlsLibrary.Controls
@@ -13,22 +9,14 @@ namespace ControlsLibrary.Controls
     /// </summary>
     public partial class TextControl : UserControl
     {
-        public struct MN
-        {
-            public ContentControl sContent;
-            public Rectangle sRect;
-            public Point sStart;
-            public Point sEnd;
-        }
+        #region Private Fields
 
-        private ContentControl _content;
+        /// <summary>
+        /// Это смена размера?.
+        /// </summary>
+        private bool _isResize;
 
-        private Point startPoint;
-
-        private Point tempStart;
-        private Point tempEnd;
-        private ContentControl _tempcontent;
-        MN[] arrayMN = new MN[1];
+        #endregion Private Fields
 
         #region Public Constructor
 
@@ -42,83 +30,45 @@ namespace ControlsLibrary.Controls
 
         #endregion Public Constructor
 
+        #region Private Methods
 
-        private void canvas_MouseDown(object sender, MouseButtonEventArgs e)
+        /// <summary>
+        /// Обрабатывает событие отпускания мыши на квадрате смены размера.
+        /// </summary>
+        private void ResizeRectangleMouseLeftButtonDown(object sender, MouseButtonEventArgs e) => _isResize = true;
+
+        /// <summary>
+        /// Обрабатывае событие нажатия мыши на квадрате смены размера.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ResizeRectangleMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            //khoi tao gia tri
-            startPoint = e.GetPosition(canvas);
-
-            tempStart = startPoint;
+            _isResize = false;
+            Rectangle rect = (Rectangle)sender;
+            rect.ReleaseMouseCapture();
         }
 
-        private void canvas_MouseMove(object sender, MouseEventArgs e)
+        /// <summary>
+        /// Обрабатывает событие движение мыши при зажатом квадрате смены размера.
+        /// </summary>
+        private void ResizeRectangleMouseMove(object sender, MouseEventArgs e)
         {
-            Point EndPoint = e.GetPosition(canvas);
-
-            if (e.LeftButton == MouseButtonState.Released || CurrentTextElement == null)
-                return;
-            var x = Math.Min(EndPoint.X, startPoint.X);
-            var y = Math.Min(EndPoint.Y, startPoint.Y);
-
-            var w = Math.Max(EndPoint.X, startPoint.X) - x;
-            var h = Math.Max(EndPoint.Y, startPoint.Y) - y;
-
-            CurrentTextElement.Width = w;
-            CurrentTextElement.Height = h;
-            Canvas.SetLeft(CurrentTextElement, x);
-            Canvas.SetTop(CurrentTextElement, y);
-        }
-
-        private void canvas_MouseUp(object sender, MouseButtonEventArgs e)
-        {
-            //luu hinh anh sau khi ve
-            //ImageSource imagesource = ConvertToBitmapSource(canvas);
-            //arrayImage.Push(imagesource);
-
-            tempEnd = e.GetPosition(canvas);
-
-            _tempcontent = new ContentControl();
-
-            //xoa previous shape
-            canvas.Children.RemoveRange(canvas.Children.Count - 1, canvas.Children.Count);
-
-            //newrect.StrokeThickness = int.Parse("0");
-            //newrect.Stroke = (Brush)bc.ConvertFrom(color);
-            if (true)
+            Rectangle rect = (Rectangle)sender;
+            if (_isResize)
             {
-                //newrect.Fill = (Brush)bc.ConvertFrom(color);
+                rect.CaptureMouse();
+                double newWidth = e.GetPosition(this).X + 5;
+                double newHeight = e.GetPosition(this).Y + 5;
+
+                if (newWidth > 0)
+                {
+                    CurrentTextControl.Width = newWidth;
+                    CurrentTextControl.Height = newHeight;
+                }
             }
-            CurrentTextElement.IsHitTestVisible = false;
-
-            _content = new ContentControl();
-            arrayMN[0].sContent = _content;
-            _content.Content = CurrentTextElement;
-
-            arrayMN[0].sStart = tempStart;
-            arrayMN[0].sEnd = tempEnd;
-
-            var x = Math.Min(tempEnd.X, tempStart.X);
-            var y = Math.Min(tempEnd.Y, tempStart.Y);
-
-            var w = Math.Max(tempEnd.X, tempStart.X) - x;
-            var h = Math.Max(tempEnd.Y, tempStart.Y) - y;
-
-            _content.Width = w;
-            _content.Height = h;
-
-            _content.MinWidth = 0;
-            _content.MinHeight = 0;
-
-            Canvas.SetLeft(_content, x);
-            Canvas.SetTop(_content, y);
-            _content.SetValue(Selector.IsSelectedProperty, true);
-            _content.Style = (Style)FindResource("DesignerItemStyle");
-
-            _tempcontent = _content;
-
-            canvas.Children.Add(_content);
-
         }
-    }
 
+        #endregion Private Methods
+    }
 }

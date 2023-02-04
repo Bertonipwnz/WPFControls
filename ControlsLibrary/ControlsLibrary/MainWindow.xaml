@@ -7,10 +7,14 @@
     xmlns:local="clr-namespace:ControlsLibrary"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="MainWindow"
-    Width="800"
+    Width="800" xmlns:viewmodel="clr-namespace:ControlsLibrary.ViewModel"
     Height="450"
     mc:Ignorable="d">
 
+    <Window.DataContext>
+        <viewmodel:MainWindowViewModel />
+    </Window.DataContext>
+    
     <!--  Представляет главное окно.  -->
     <Canvas IsManipulationEnabled="True" Width="1600" Height="1600">
 

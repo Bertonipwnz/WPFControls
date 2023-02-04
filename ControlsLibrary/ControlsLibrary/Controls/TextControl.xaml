@@ -5,28 +5,89 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:ControlsLibrary.Controls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewmodel="clr-namespace:ControlsLibrary.ViewModel"
+    d:DataContext="{d:DesignInstance viewmodel:MainWindowViewModel}"
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
 
-    <UserControl.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../Resources/DesignerItem.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </UserControl.Resources>
-
     <!--  Пользовательский элемент текста.  -->
     <Canvas
-        Name="canvas"
-        MouseDown="canvas_MouseDown"
-        MouseMove="canvas_MouseMove"
-        MouseUp="canvas_MouseUp">
-        <TextBox
-            Name="CurrentTextElement"
-            Width="100"
-            Height="100"
-            Background="Blue" />
+        Width="1600"
+        Height="1500"
+        Background="White">
+
+        <Border
+            x:Name="CurrentTextControl"
+            Canvas.Left="{Binding TextModel.Left, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+            Canvas.Top="{Binding TextModel.Top, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+            Width="{Binding TextModel.Width, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+            Height="{Binding TextModel.Height, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+            Margin="150,150,0,0"
+            BorderBrush="Black"
+            BorderThickness="2"
+            RenderTransformOrigin=".5,.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <RotateTransform x:Name="rotateTransform" />
+                    <TranslateTransform />
+                </TransformGroup>
+            </Border.RenderTransform>
+
+            <Grid>
+                <TextBox
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Text="{Binding TextModel.Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                <Rectangle
+                    Width="20"
+                    Height="20"
+                    Margin="-5,-5,-5,0"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                    Fill="Blue" />
+
+                <Rectangle
+                    Width="20"
+                    Height="20"
+                    Margin="-5,-5,-5,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Cursor="SizeWE"
+                    Fill="Green"
+                    MouseLeftButtonDown="Rectangle_MouseLeftButtonDown"
+                    MouseLeftButtonUp="Rectangle_MouseLeftButtonUp"
+                    MouseMove="Rectangle_MouseMove" />
+
+                <Rectangle
+                    Width="20"
+                    Height="20"
+                    Margin="-5,-5,-5,0"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Bottom"
+                    Fill="Red" />
+
+                <Rectangle
+                    Width="20"
+                    Height="20"
+                    Margin="-5,-5,-5,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom"
+                    Fill="Red"
+                    PreviewMouseLeftButtonDown="Rectangle_PreviewMouseLeftButtonDown"
+                    PreviewMouseLeftButtonUp="Rectangle_PreviewMouseLeftButtonUp"
+                    PreviewMouseMove="Rectangle_PreviewMouseMove" />
+
+            </Grid>
+        </Border>
+
+        <StackPanel>
+            <TextBlock Text="{Binding TextModel.Width}" />
+            <TextBlock Text="{Binding TextModel.Height}" />
+            <TextBlock Text="{Binding TextModel.Angle}" />
+            <TextBlock Text="{Binding TextModel.Left}" />
+            <TextBlock Text="{Binding TextModel.Top}" />
+        </StackPanel>
     </Canvas>
 </UserControl>
