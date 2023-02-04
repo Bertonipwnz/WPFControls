@@ -63,7 +63,10 @@
                     Margin="-5,-5,-5,0"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Bottom"
-                    Fill="Red" />
+                    Fill="Red"
+                    MouseLeftButtonDown="TranslateRectangleMouseLeftButtonDown"
+                    MouseLeftButtonUp="TranslateRectangleMouseLeftButtonUp"
+                    MouseMove="TranslateRectangleMouseMove" />
 
                 <!--  Иконка смены размера текстового поля.  -->
                 <Image

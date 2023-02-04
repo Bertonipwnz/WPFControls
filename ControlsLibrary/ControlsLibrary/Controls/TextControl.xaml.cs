@@ -24,6 +24,16 @@ namespace ControlsLibrary.Controls
         /// </summary>
         private bool _isRotate;
 
+        /// <summary>
+        /// Это перемещение?
+        /// </summary>
+        private bool _isMoving;
+
+        /// <summary>
+        /// Точка стартовой позиции.
+        /// </summary>
+        private Point _startPosition;
+
         #endregion Private Fields
 
         #region Public Constructor
@@ -116,6 +126,47 @@ namespace ControlsLibrary.Controls
                 rotateTransform.Angle = newRotateTransform.Angle;
                 rotateTransform.CenterX = CurrentTextControl.ActualWidth / 2;
                 rotateTransform.CenterY = CurrentTextControl.ActualHeight / 2;
+            }
+        }
+
+        /// <summary>
+        /// Обрабатывает событие отпускания мыши на квадрате перемещения.
+        /// </summary>
+        private void TranslateRectangleMouseLeftButtonDown(object sender, MouseButtonEventArgs e) 
+        {
+            _startPosition = Mouse.GetPosition(this);
+            _isMoving = true;
+        }
+
+        /// <summary>
+        /// Обрабатывае событие нажатия мыши на квадрате перемещения.
+        /// </summary>
+        private void TranslateRectangleMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            _isMoving = false;
+            Rectangle rect = (Rectangle)sender;
+            rect.ReleaseMouseCapture();
+        }
+
+        /// <summary>
+        /// Обрабатывает событие движение мыши при зажатом квадрате перемещения.
+        /// </summary>
+        private void TranslateRectangleMouseMove(object sender, MouseEventArgs e)
+        {
+            Rectangle rect = (Rectangle)sender;
+            if (_isMoving)
+            {
+                // get the parent container
+                var container = VisualTreeHelper.GetParent(this) as UIElement;
+
+                if (container == null)
+                    return;
+
+                // get the position within the container
+                var mousePosition = e.GetPosition(container);
+
+                // move the usercontrol.
+                this.RenderTransform = new TranslateTransform(mousePosition.X - _startPosition.X, mousePosition.Y - _startPosition.Y);
             }
         }
 

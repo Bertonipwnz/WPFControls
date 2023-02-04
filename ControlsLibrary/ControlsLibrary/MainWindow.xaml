@@ -6,19 +6,24 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:ControlsLibrary"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewmodel="clr-namespace:ControlsLibrary.ViewModel"
     Title="MainWindow"
-    Width="800" xmlns:viewmodel="clr-namespace:ControlsLibrary.ViewModel"
+    Width="800"
     Height="450"
     mc:Ignorable="d">
 
     <Window.DataContext>
         <viewmodel:MainWindowViewModel />
     </Window.DataContext>
-    
+
     <!--  Представляет главное окно.  -->
-    <Canvas IsManipulationEnabled="True" Width="1600" Height="1600">
+    <Canvas
+        Width="1600"
+        Height="1600"
+        IsManipulationEnabled="True">
 
         <!--  Контрол текста.  -->
+        <controls:TextControl />
         <controls:TextControl />
     </Canvas>
 </Window>
