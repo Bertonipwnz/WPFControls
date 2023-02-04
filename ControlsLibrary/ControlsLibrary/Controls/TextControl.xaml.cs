@@ -45,7 +45,7 @@ namespace ControlsLibrary.Controls
         private void ResizeRectangleMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             _isResize = false;
-            Rectangle rect = (Rectangle)sender;
+            Image rect = (Image)sender;
             rect.ReleaseMouseCapture();
         }
 
@@ -54,12 +54,12 @@ namespace ControlsLibrary.Controls
         /// </summary>
         private void ResizeRectangleMouseMove(object sender, MouseEventArgs e)
         {
-            Rectangle rect = (Rectangle)sender;
+            Image rect = (Image)sender;
             if (_isResize)
             {
                 rect.CaptureMouse();
-                double newWidth = e.GetPosition(this).X + 5;
-                double newHeight = e.GetPosition(this).Y + 5;
+                double newWidth = e.GetPosition(this).X;
+                double newHeight = e.GetPosition(this).Y;
 
                 if (newWidth > 0)
                 {

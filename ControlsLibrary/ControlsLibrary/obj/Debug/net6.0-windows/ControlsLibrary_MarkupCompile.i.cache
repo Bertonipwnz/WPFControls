@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\romas\source\repos\WPFControls\ControlsLibrary\ControlsLibrary\App.xaml
-276633454
-
+3-1202036037
+11295834876
 8-282857565
 195-1341480950
-Controls\TextControl.xaml;MainWindow.xaml;
+Controls\TextControl.xaml;MainWindow.xaml;Resources\Dictionary\ImagesDictionary.xaml;
 
 True
 

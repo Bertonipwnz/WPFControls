@@ -55,10 +55,7 @@
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Cursor="SizeWE"
-                    Fill="Green"
-                    MouseLeftButtonDown="Rectangle_MouseLeftButtonDown"
-                    MouseLeftButtonUp="Rectangle_MouseLeftButtonUp"
-                    MouseMove="Rectangle_MouseMove" />
+                    Fill="Green" />
 
                 <Rectangle
                     Width="20"
@@ -68,16 +65,16 @@
                     VerticalAlignment="Bottom"
                     Fill="Red" />
 
-                <Rectangle
+                <Image
                     Width="20"
                     Height="20"
-                    Margin="-5,-5,-5,0"
+                    Margin="-10,0,0,-10"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
-                    Fill="Red"
-                    PreviewMouseLeftButtonDown="Rectangle_PreviewMouseLeftButtonDown"
-                    PreviewMouseLeftButtonUp="Rectangle_PreviewMouseLeftButtonUp"
-                    PreviewMouseMove="Rectangle_PreviewMouseMove" />
+                    MouseLeftButtonDown="ResizeRectangleMouseLeftButtonDown"
+                    MouseLeftButtonUp="ResizeRectangleMouseLeftButtonUp"
+                    MouseMove="ResizeRectangleMouseMove"
+                    Source="{StaticResource IconResize}" />
 
             </Grid>
         </Border>
